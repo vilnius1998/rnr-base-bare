@@ -1,43 +1,119 @@
 {
   "expo": {
-    "name": "rnr-base-bare",
-    "slug": "rnr-base-bare",
-    "version": "1.0.0",
+    "name": "Inventerra",
+    "slug": "Inventerra",
+    "version": "1.6.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "scheme": "inventerra",
+    "userInterfaceStyle": "light",
+    "owner": "pnwsoftwaresolutions",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "privacyManifests": {
+        "NSPrivacyAccessedAPITypes": [
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryDiskSpace",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "E174.1"
+            ]
+          },
+          {
+            "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+            "NSPrivacyAccessedAPITypeReasons": [
+              "C617.1"
+            ]
+          }
+        ]
+      },
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ],
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location when open.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to your location always, even when you are not using the app.",
+        "NSLocationAlwaysUsageDescription": "This app needs access to your location always, even when the app is in the background."
+      },
+      "bundleIdentifier": "com.pnwsoftwaresolutions.hdpartners"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
+      },
+      "googleServicesFile": "./google-services.json",
+      "package": "com.pnwsoftwaresolutions.hdpartners",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "FOREGROUND_SERVICE",
+        "ACCESS_BACKGROUND_LOCATION"
+      ],
+      "versionCode": 63,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBUC9lTUtT_D4QfPejnAbzaeeiXSmGtHuQ"
+        }
       }
     },
     "web": {
-      "bundler": "metro",
-      "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router",
-      "expo-secure-store",
       [
-        "expo-image-picker",
+        "expo-build-properties",
         {
-          "photosPermission": "The app accesses your photos to let you share them with your friends."
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0"
+          },
+          "ios": {
+            "extraPods": [
+              {
+                "name": "simdjson",
+                "configurations": [
+                  "Debug",
+                  "Release"
+                ],
+                "path": "../node_modules/@nozbe/simdjson",
+                "modular_headers": true
+              }
+            ]
+          }
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(Inventerra) to use your location."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(Inventerra) to access your camera",
+          "microphonePermission": "Allow $(Inventerra) to access your microphone",
+          "recordAudioAndroid": true
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
+    "extra": {
+      "eas": {
+        "projectId": "520ac4b9-cf96-4549-b706-7ea952936c3f"
+      }
     }
   }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "702755168925",
+    "project_id": "hd-partners-expo",
+    "storage_bucket": "hd-partners-expo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702755168925:android:233bde776e8d1d15a3aa74",
+        "android_client_info": {
+          "package_name": "com.pnwsoftwaresolutions.hdpartners"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHX4XJv-WMm4WjPUgl7a4Npa6_R6rmj1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
